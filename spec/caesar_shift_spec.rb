@@ -7,6 +7,10 @@ describe '#moving_shift' do
   it 'increments a given letters by the number and plus one for additional letters' do
     expect(moving_shift('ab',1)).to eq(['b','d'])
   end
+
+  it 'increments by numbers other than one' do
+    expect(moving_shift('c', 2)).to eq(['e'])
+  end
 end
 
 describe '#demoving_shift' do
