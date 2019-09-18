@@ -11,6 +11,10 @@ describe '#moving_shift' do
   it 'increments by numbers other than one' do
     expect(moving_shift('c', 2)).to eq(['e'])
   end
+
+  it 'handles string with more than five characters' do
+    expect(moving_shift('abcdef', 1)).to eq(['bd','f', 'h', 'j', 'l'])
+  end
 end
 
 describe '#demoving_shift' do
