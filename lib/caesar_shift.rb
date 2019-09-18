@@ -7,21 +7,26 @@ def moving_shift(s, shift)
     s.split('').each_with_index do |letter, index|
       alpha_index = ALPHABET.find_index(letter)
       letter = ALPHABET[alpha_index + shift + index]
-      if remainder == 0 || s.length <= 5
+      if s.length <= 5
         result[index] << letter
-      elsif remainder == 1 && s.length > 5
-        if index == 0 || index == 1
-        result[0] << letter
-        else
-          result[index -1] << letter
-        end
-      elsif remainder == 2 && s.length > 5
-        if index == 1 || index == 0
-        result[0] << letter
-        elsif index == 2 || index == 3
-          result[1] << letter
-        else
-          result[index -2] << letter
+      else
+        case remainder
+        when 0
+          result[index] << letter
+        when 1
+          if index == 0 || index == 1
+          result[0] << letter
+          else
+            result[index -1] << letter
+          end
+        when 2
+          if index == 1 || index == 0
+          result[0] << letter
+          elsif index == 2 || index == 3
+            result[1] << letter
+          else
+            result[index -2] << letter
+          end
         end
       end
       alpha_index += 1
