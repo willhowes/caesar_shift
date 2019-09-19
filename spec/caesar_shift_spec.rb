@@ -19,6 +19,10 @@ describe '#moving_shift' do
   it 'handles a string of more than six character' do
     expect(moving_shift('abcdefg', 1)).to eq(['bd','fh', 'j', 'l', 'n'])
   end
+
+  it 'handles letters later in the alphabet' do
+    expect(moving_shift('z', 1)).to eq(['a','','','',''])
+  end
 end
 
 describe '#demoving_shift' do

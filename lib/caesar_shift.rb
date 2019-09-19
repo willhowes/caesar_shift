@@ -6,7 +6,7 @@ def moving_shift(s, shift)
     remainder = s.length % 5
     s.split('').each_with_index do |letter, index|
       alpha_index = ALPHABET.find_index(letter)
-      letter = ALPHABET[alpha_index + shift + index]
+      letter = ALPHABET[(alpha_index + shift + index) % 26]
       if s.length <= 5
         result[index] << letter
       else
