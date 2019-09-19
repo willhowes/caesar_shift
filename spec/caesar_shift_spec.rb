@@ -23,6 +23,10 @@ describe '#moving_shift' do
   it 'handles letters later in the alphabet' do
     expect(moving_shift('z', 1)).to eq(['a','','','',''])
   end
+
+  it 'handles strings of eight characters' do
+    expect(moving_shift('abcdefgh', 1)).to eq(['bd','fh', 'jl', 'np', ''])
+  end
 end
 
 describe '#demoving_shift' do

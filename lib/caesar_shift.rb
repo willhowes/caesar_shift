@@ -27,6 +27,16 @@ def moving_shift(s, shift)
           else
             result[index -2] << letter
           end
+        when 3
+          if index == 1 || index == 0
+          result[0] << letter
+          elsif index == 2 || index == 3
+            result[1] << letter
+          elsif index == 4 || index == 5
+            result[2] << letter
+          else
+            result[3] << letter
+          end
         end
       end
       alpha_index += 1
