@@ -27,6 +27,10 @@ describe '#moving_shift' do
   it 'handles strings of eight characters' do
     expect(moving_shift('abcdefgh', 1)).to eq(['bd','fh', 'jl', 'np', ''])
   end
+
+  it 'handles strings of nine characters' do
+    expect(moving_shift('abcdefghi', 1)).to eq(['bd','fh', 'jl', 'np', 'r'])
+  end
 end
 
 describe '#demoving_shift' do
